@@ -1,0 +1,15 @@
+name: Deploy Dump
+
+on: 
+  push:
+    branches: 
+      - cicd
+
+jobs: 
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Print Hello World
+        run: echo "Hello
