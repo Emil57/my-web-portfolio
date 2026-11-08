@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Small backend for the portfolio contact form. No dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test"
+  }
+}

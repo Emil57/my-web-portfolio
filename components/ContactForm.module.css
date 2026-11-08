@@ -1,0 +1,37 @@
+.form {
+  display: grid;
+  gap: 16px;
+  max-width: 560px;
+}
+
+.form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form input,
+.form textarea {
+  font: inherit;
+  font-weight: 400;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.form button {
+  justify-self: start;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
+.error {
+  color: var(--danger);
+  margin: 0;
+}
