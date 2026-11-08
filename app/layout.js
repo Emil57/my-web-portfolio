@@ -1,27 +1,34 @@
-import { Open_Sans } from "next/font/google";
-import Link from "next/link";
-import styles from "./rootStyle.module.css"
+import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import { profile } from "@/data/profile";
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weights: [400],
-});
+export const metadata = {
+  title: {
+    default: `${profile.name} — ${profile.title}`,
+    template: `%s | ${profile.name}`,
+  },
+  description: profile.pitch,
+};
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={openSans.className}>
-      <head />
-        <body>
-          <header className={styles.header}>
-            <h1><Link className={styles.homeLink} href={"/home"}>Globomantics</Link></h1>
-            
-            <h3><Link className={styles.menuBarLink} href={"/blog"}>Blog</Link></h3>
-            <h3><Link className={styles.menuBarLink} href={"/settings"}>Settings</Link></h3>
-            <h3><Link className={styles.menuBarLink} href={"/conference"}>Conference</Link></h3>
-          </header>
+    <html lang="en">
+      <body>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <Nav name={profile.name} />
+        <main id="main" className="container">
           {children}
-        </body>
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
